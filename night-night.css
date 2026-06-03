@@ -1,0 +1,189 @@
+/* Night Night Popup
+   A gentle website rest overlay for late-night browsing.
+   Original concept by Lagori Collective.
+*/
+
+#nn-overlay {
+  position: fixed;
+  inset: 0;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 80px;
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  box-sizing: border-box;
+}
+
+#nn-overlay.nn-hidden {
+  display: none !important;
+}
+
+#nn-overlay.nn-fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nn-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nn-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: nn-twinkle var(--d) ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes nn-twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: var(--o); }
+}
+
+.nn-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.nn-text-block {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.nn-texture-strip {
+  width: 20px;
+  flex-shrink: 0;
+  background-image: var(--nn-texture-url, none);
+  background-size: cover;
+  background-position: center;
+  background-color: #C53526;
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.nn-text-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.nn-logo {
+  width: 100px;
+  display: block;
+  margin-bottom: 32px;
+  filter: invert(1);
+  opacity: 0.75;
+  mix-blend-mode: normal;
+}
+
+.nn-logo.nn-hidden-logo {
+  display: none;
+}
+
+.nn-eyebrow {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+  margin: 0 0 28px 0;
+}
+
+.nn-heading {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.nn-body {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 28px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 16px 0;
+}
+
+.nn-custom-text {
+  font-family: 'Merriweather', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 40px 0;
+  border-left: 2px solid #C53526;
+  padding-left: 14px;
+  font-style: italic;
+}
+
+.nn-wake {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+  margin: 0 0 40px 0;
+}
+
+.nn-skip-btn {
+  display: block;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  color: #FFFFFF;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0 0 2px 0;
+  text-align: left;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  width: fit-content;
+}
+
+.nn-skip-btn:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.nn-brand {
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  #nn-overlay {
+    padding: 48px 32px;
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+
+  .nn-body,
+  .nn-wake {
+    font-size: 24px;
+  }
+
+  .nn-brand {
+    right: 24px;
+    bottom: 24px;
+  }
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Night Night Popup Demo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=Merriweather:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="night-night.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Epilogue, sans-serif;
+      padding: 48px;
+      background: #f7f1e8;
+      color: #171717;
+    }
+
+    main {
+      max-width: 760px;
+    }
+
+    button.demo-button {
+      margin-top: 24px;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Night Night Popup Demo</h1>
+    <p>
+      This is a simple demo page. The popup appears automatically between 11:00 PM and 6:00 AM.
+      Use the button below to preview it immediately.
+    </p>
+
+    <button class="demo-button" onclick="document.getElementById('nn-overlay').classList.remove('nn-hidden')">
+      Preview popup
+    </button>
+  </main>
+
+  <div id="nn-overlay" class="nn-hidden">
+    <div class="nn-stars" id="nn-stars"></div>
+
+    <div class="nn-content">
+      <div class="nn-text-block">
+        <div class="nn-texture-strip"></div>
+
+        <div class="nn-text-inner">
+          <!-- Replace src with your own logo. Remove this image if not needed. -->
+          <img src="" alt="" class="nn-logo nn-hidden-logo">
+
+          <h1 class="nn-heading">It's late. There is value in stopping and resting.</h1>
+          <p class="nn-body">Nothing here is worth losing sleep over. Go to sleep.</p>
+          <p class="nn-wake">Back at 6:00 AM.</p>
+
+          <button class="nn-skip-btn" onclick="nnDismiss()">
+            I'll rest later. Take me in →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nn-brand">NIGHT NIGHT</div>
+  </div>
+
+  <script src="night-night.js"></script>
+</body>
+</html>
