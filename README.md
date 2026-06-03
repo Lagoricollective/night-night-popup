@@ -2,7 +2,7 @@
 
 A gentle late-night overlay that lets a website "go to sleep" after a chosen hour.
 
-Originally made for Lagori Collective as a small temporal design experiment: a website does not need to behave like it is endlessly available. It can have rhythms, pauses, and a sense of care.
+Originally made for Lagori Collective (inspired by J Paul Neeley) as a small temporal design experiment: a website does not need to behave like it is endlessly available. It can have rhythms, pauses, and a sense of care.
 
 ## What it does
 
